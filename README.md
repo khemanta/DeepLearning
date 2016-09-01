@@ -1,17 +1,22 @@
-# Code samples for "Neural Networks and Deep Learning"
+# Code samples for "Artificial Intelligence - Convolutional Neural Networks, Deep Learning"
 
 This repository contains code samples for my (forthcoming) book on
-"Neural Networks and Deep Learning".
+"Artificial Intelligence - Convolutional Neural Networks and Deep Learning".
+
+This book is largely borrowed from Michael Nielsen book on "Neural Nwtworks 
+and Deep Learning" under CC license.
 
 As the code is written to accompany the book, I don't intend to add
 new features.  However, bug reports are welcome, and you should feel
 free to fork and modify the code.
 
+
+
 ## License
 
 MIT License
 
-Copyright (c) 2012-2015 Michael Nielsen
+Copyright (c) 2012-2015 Kumar HEMANT
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
