@@ -1,32 +1,31 @@
 \select@language {english}
-\contentsline {section}{Dedication}{iii}{Doc-Start}
+\contentsline {section}{Dedication}{iii}{section*.1}
 \contentsline {chapter}{\numberline {1}\color {IAF} \bf Introduction}{8}{chapter.1}
 \contentsline {section}{\numberline {1.1}Neural Networks and Deep Learning}{8}{section.1.1}
 \contentsline {section}{\numberline {1.2}A principle-oriented approach}{8}{section.1.2}
-\contentsline {section}{\numberline {1.3}A hands-on approach}{9}{section.1.3}
-\contentsline {chapter}{\numberline {2}\color {IAF} \bf Using neural nets to recognize handwritten digits}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Perceptrons}{13}{section.2.1}
-\contentsline {section}{\numberline {2.2}Sigmoid neurons}{19}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Exercise}{22}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}The architecture of neural networks}{23}{section.2.3}
-\contentsline {section}{\numberline {2.4}A simple network to classify handwritten digits}{25}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Exercise}{28}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Learning with gradient descent}{29}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Exercise}{36}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Exercise}{38}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Implementing our network to classify digits}{39}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Exercise}{41}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Exercise}{49}{subsection.2.6.2}
-\contentsline {section}{\numberline {2.7}Towards deep learning}{53}{section.2.7}
-\contentsline {chapter}{\numberline {3}\color {IAF} \bf How the backpropagation algorithm works}{57}{chapter.3}
-\contentsline {section}{\numberline {3.1}Warm up: a fast matrix-based approach to computing the output from a neural network}{58}{section.3.1}
-\contentsline {chapter}{\numberline {4}\color {IAF} \bf Improving the way neural networks learn}{60}{chapter.4}
-\contentsline {chapter}{\numberline {5}\color {IAF} \bf A visual proof that neural nets can compute any function}{61}{chapter.5}
-\contentsline {chapter}{\numberline {6}\color {IAF} \bf Why are deep neural networks hard to train?}{62}{chapter.6}
-\contentsline {chapter}{\numberline {7}\color {IAF} \bf Deep learning}{63}{chapter.7}
-\contentsline {chapter}{\numberline {8}\color {IAF} \bf Appendices}{64}{chapter.8}
-\contentsline {section}{\numberline {8.1}\color {IAF} Appendix-A: Is there a simple algorithm for intelligence?}{64}{section.8.1}
-\contentsline {section}{\numberline {8.2}\color {IAF} Appendix-B: Acknowledgements}{64}{section.8.2}
-\contentsline {section}{\numberline {8.3}\color {IAF} Appendix-C: FAQs}{64}{section.8.3}
-\contentsline {chapter}{\numberline {9}\color {IAF} \bf Bibliography}{65}{chapter.9}
-\contentsline {chapter}{\numberline {10}\color {IAF} \bf Index}{66}{chapter.10}
+\contentsline {section}{\numberline {1.3}A hands-on approach}{8}{section.1.3}
+\contentsline {chapter}{\numberline {2}\color {IAF} \bf Using neural nets to recognize handwritten digits}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Perceptrons}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Sigmoid neurons}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Exercise}{14}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}The architecture of neural networks}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}A simple network to classify handwritten digits}{15}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Exercise}{17}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Learning with gradient descent}{17}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Exercise}{22}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Exercise}{24}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Implementing our network to classify digits}{24}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Exercise}{29}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Exercise}{110}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}Towards deep learning}{136}{section.2.7}
+\contentsline {chapter}{\numberline {3}\color {IAF} \bf How the backpropagation algorithm works}{137}{chapter.3}
+\contentsline {section}{\numberline {3.1}Warm up: a fast matrix-based approach to computing the output from a neural network}{137}{section.3.1}
+\contentsline {chapter}{\numberline {4}\color {IAF} \bf Improving the way neural networks learn}{139}{chapter.4}
+\contentsline {chapter}{\numberline {5}\color {IAF} \bf A visual proof that neural nets can compute any function}{140}{chapter.5}
+\contentsline {chapter}{\numberline {6}\color {IAF} \bf Why are deep neural networks hard to train?}{141}{chapter.6}
+\contentsline {chapter}{\numberline {7}\color {IAF} \bf Deep learning}{142}{chapter.7}
+\contentsline {chapter}{\numberline {8}\color {IAF} \bf Appendices}{143}{chapter.8}
+\contentsline {section}{\numberline {8.1}\color {IAF} Appendix-A: Is there a simple algorithm for intelligence?}{143}{section.8.1}
+\contentsline {section}{\numberline {8.2}\color {IAF} Appendix-B: Acknowledgements}{143}{section.8.2}
+\contentsline {section}{\numberline {8.3}\color {IAF} Appendix-C: FAQs}{143}{section.8.3}
+\contentsline {chapter}{\numberline {9}\color {IAF} \bf Bibliography}{144}{chapter.9}

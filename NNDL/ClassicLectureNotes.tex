@@ -25,6 +25,7 @@
 % Create index
 \usepackage[utf8]{inputenc}
 \usepackage{imakeidx}
+ \makeindex[columns=2, title={\Large \bf \color{IAF} Alphabetical Index}]
 
 \usepackage[toc]{appendix}
 %\usepackage{tocloft}
@@ -42,6 +43,11 @@
     linkcolor=blue,
     urlcolor=cyan%cyan!50!black!90
 }
+
+%%----------Watermark----------------
+\usepackage[printwatermark]{xwatermark}
+%\newwatermark[pages=2-3,color=red!10,angle=45,scale=4.5,xpos=0,ypos=0]{Deep Learning}
+%\newwatermark[allpages,color=red!10,angle=45,scale=4.5,xpos=0,ypos=0]{Deep Learning}
 
 %%---- Fontspec Config --------------
 \usepackage{fontspec}
@@ -106,10 +112,10 @@
 \newcommand\titlepagedecoration{%
 \begin{tikzpicture}[remember picture,overlay,shorten >= -25pt]
 
-\coordinate (aux1) at ([yshift=-35pt]current page.north east);
-\coordinate (aux2) at ([yshift=-410pt]current page.north east);
-\coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
-\coordinate (aux4) at ([yshift=-150pt]current page.north east);
+\coordinate (aux1) at ([yshift=-35pt]current page.north east);  %-35pt
+\coordinate (aux2) at ([yshift=-410pt]current page.north east); %-410pt
+\coordinate (aux3) at ([xshift=-4.5cm]current page.north east); %-4.5cm
+\coordinate (aux4) at ([yshift=-150pt]current page.north east); %-150pt
 
 \begin{scope}[TitlePageColor!40,line width=12pt,rounded corners=12pt]
 \draw
@@ -214,7 +220,7 @@
 \begin{titlepage}
 
 \noindent
-\titlefont \color{TitlePageColor}Neural Networks \\ \& Deep Learning\par
+\titlefont \color{TitlePageColor} Neural Networks \\ \& Deep Learning\par
 %\epigraph{Pure mathematics is on the whole distinctly more useful than applied. For what is useful above all is technique, and mathematical technique is taught mainly through pure mathematics.}%
 \epigraph{\color{arsenic}{\it Complexity is a sign of intelligence. Simplicity is a sign of wisdom. Neural Networks, likewise, emulates the complex human brain and Deep Learning simplifies these learned experiences.}}
 %{\it Neural Networks, likewise, emulates the complex human brain and Deep Learning simplifies these learned experiences.}}
@@ -244,7 +250,7 @@
 
 %\includegraphics[width=1.0\textwidth]{./images/deep-learning-eu.jpg}
 
-\bigskip
+%\bigskip
 
 %\hrule
 %\includegraphics[width=\linewidth]{./images/ccl.png}
@@ -262,7 +268,7 @@
 \begin{center}
 ~~~ \\
 \vspace{21cm}
-{\color{blue} \small $\copyright$ Neural Networks and Deep Learning} --
+{\color{blue} \small $\copyright$ Artifical Intelligence, Neural Networks and Deep Learning} --
 {\color{blue} \small Kumar Hemant}
 \end{center}
 
@@ -417,7 +423,7 @@ We're focusing on handwriting recognition because it's an excellent prototype pr
 Of course, if the point of the chapter was only to write a computer program to recognize handwritten digits, then the chapter would be much shorter! But along the way we'll develop many key ideas about neural networks, including two important types of artificial neuron (the perceptron and the sigmoid neuron), and the standard learning algorithm for neural networks, known as stochastic gradient descent. Throughout, I focus on explaining why things are done the way they are, and on building your neural networks intuition. That requires a lengthier discussion than if I just presented the basic mechanics of what's going on, but it's worth it for the deeper understanding you'll attain. Amongst the payoffs, by the end of the chapter we'll be in position to understand what deep learning is, and why it matters.
 
 \section{Perceptrons}
-What is a neural network? To get started, I'll explain a type of artificial neuron called a perceptron. Perceptrons were developed in the 1950s and 1960s by the scientist Frank Rosenblatt, inspired by earlier work by Warren McCulloch and Walter Pitts. Today, it's more common to use other models of artificial neurons - in this book, and in much modern work on neural networks, the main neuron model used is one called the sigmoid neuron. We'll get to sigmoid neurons shortly. But to understand why sigmoid neurons are defined the way they are, it's worth taking the time to first understand perceptrons.
+What is a neural network? To get started, I'll explain a type of artificial neuron called a perceptron. Perceptrons\index{perceptron} were developed in the 1950s and 1960s by the scientist Frank Rosenblatt, inspired by earlier work by Warren McCulloch and Walter Pitts. Today, it's more common to use other models of artificial neurons - in this book, and in much modern work on neural networks, the main neuron model used is one called the sigmoid neuron. We'll get to sigmoid neurons shortly. But to understand why sigmoid neurons are defined the way they are, it's worth taking the time to first understand perceptrons.
 
 So how do perceptrons work? A perceptron takes several binary inputs, $x_{1}, x_{2}, ... $ and produces a single binary output:
 
@@ -598,7 +604,7 @@ How should we interpret the output from a sigmoid neuron? Obviously, one big dif
     Suppose we take all the weights and biases in a network of perceptrons, and multiply them by a positive constant, $c > 0$. Show that the behaviour of the network doesn't change.
 
 \item {\bf Sigmoid neurons simulating perceptrons, part II}\\
-    Suppose we have the same setup as the last problem - a network of perceptrons. Suppose also that the overall input to the network of perceptrons has been chosen. We won't need the actual input value, we just need the input to have been fixed. Suppose the weights and biases are such that $w.x + b \ne 0$ for the input x to any particular perceptron in the network. Now replace all the perceptrons in the network by sigmoid neurons, and multiply the weights and biases by a positive constant $c > 0$. Show that in the limit as c → ∞ the behaviour of this network of sigmoid neurons is exactly the same as the network of perceptrons. How can this fail when $w.x + b = 0$  for one of the perceptrons?
+    Suppose we have the same setup as the last problem - a network of perceptrons. Suppose also that the overall input to the network of perceptrons has been chosen. We won't need the actual input value, we just need the input to have been fixed. Suppose the weights and biases are such that $w.x + b \ne 0$ for the input x to any particular perceptron in the network. Now replace all the perceptrons in the network by sigmoid neurons, and multiply the weights and biases by a positive constant $c > 0$. Show that in the limit as c → ∞ the behaviour of this network of sigmoid neurons is exactly the same as the network of perceptrons. How can this fail when $w.x + b = 0$  for one of the perceptrons\index{perceptrons}?
 \end{itemize}
 
 
@@ -622,7 +628,7 @@ Up to now, we've been discussing neural networks where the output from one layer
 
 However, there are other models of artificial neural networks in which feedback loops are possible. These models are called {\it recurrent neural networks}\href{https://en.wikipedia.org/wiki/Recurrent_neural_network}. The idea in these models is to have neurons which fire for some limited duration of time, before becoming quiescent. That firing can stimulate other neurons, which may fire a little while later, also for a limited duration. That causes still more neurons to fire, and so over time we get a cascade of neurons firing. Loops don't cause problems in such a model, since a neuron's output only affects its input at some later time, not instantaneously.
 
-Recurrent neural nets have been less influential than feedforward networks, in part because the learning algorithms for recurrent nets are (at least to date) less powerful. But recurrent networks are still extremely interesting. They're much closer in spirit to how our brains work than feedforward networks. And it's possible that recurrent networks can solve important problems which can only be solved with great difficulty by feedforward networks. However, to limit our scope, in this book we're going to concentrate on the more widely-used feedforward networks.
+Recurrent neural nets have been less influential than feedforward networks, in part because the learning algorithms for recurrent nets are (at least to date) less powerful. But recurrent networks are still extremely interesting. They're much closer in spirit to how our brains work than feedforward networks. And it's possible that recurrent networks can solve important problems which can only be solved with great difficulty by feedforward networks. However, to limit our scope, in this book we're going to concentrate on the more widely-used feedforward\index{feedforward} networks.
 
 \section{A simple network to classify handwritten digits}
 Having defined neural networks, let's return to handwriting recognition. We can split the problem of recognizing handwritten digits into two sub-problems. First, we'd like a way of breaking an image containing many digits into a sequence of separate images, each containing a single digit. For example, we'd like to break the image
@@ -645,15 +651,15 @@ is a 5.
 
 We'll focus on writing a program to solve the second problem, that is, classifying individual digits. We do this because it turns out that the segmentation problem is not so difficult to solve, once you have a good way of classifying individual digits. There are many approaches to solving the segmentation problem. One approach is to trial many different ways of segmenting the image, using the individual digit classifier to score each trial segmentation. A trial segmentation gets a high score if the individual digit classifier is confident of its classification in all segments, and a low score if the classifier is having a lot of trouble in one or more segments. The idea is that if the classifier is having trouble somewhere, then it's probably having trouble because the segmentation has been chosen incorrectly. This idea and other variations can be used to solve the segmentation problem quite well. So instead of worrying about segmentation we'll concentrate on developing a neural network which can solve the more interesting and difficult problem, namely, recognizing individual handwritten digits.
 
-To recognize individual digits we will use a three-layer neural network:
+To recognize individual digits we will use a three-layer neural network\index{neural network}:
 
 \begin{center}
  \includegraphics[width=0.85\linewidth]{images/tikz12.png}
 \end{center}
 
-The input layer of the network contains neurons encoding the values of the input pixels. As discussed in the next section, our training data for the network will consist of many $28~by~28$ pixel images of scanned handwritten digits, and so the input layer contains $784=28 \times 28$ neurons. For simplicity I've omitted most of the 784 input neurons in the diagram above. The input pixels are greyscale, with a value of 0.0 representing white, a value of 1.0 representing black, and in between values representing gradually darkening shades of grey.
+The input layer of the network contains neurons encoding the values of the input pixels. As discussed in the next section, our training data for the network will consist of many $28~by~28$ pixel images of scanned handwritten digits, and so the input layer contains $784=28\times28$ neurons. For simplicity I've omitted most of the 784 input neurons in the diagram above. The input pixels are greyscale, with a value of 0.0 representing white, a value of 1.0 representing black, and in between values representing gradually darkening shades of grey.
 
-The second layer of the network is a hidden layer. We denote the number of neurons in this hidden layer by $n$, and we'll experiment with different values for $n$. The example shown illustrates a small hidden layer, containing just $n=15$ neurons.
+The second layer of the network is a hidden layer. We denote the number of neurons in this hidden layer by $n$, and we'll experiment with different values for $n$. The example shown illustrates a small hidden layer, containing just $n=15$ neurons\index{neurons}.
 
 The output layer of the network contains 10 neurons. If the first neuron fires, i.e., has an output $ ≈ 1 $, then that will indicate that the network thinks the digit is a $0$. If the second neuron fires then that will indicate that the network thinks the digit is a $1$. And so on. A little more precisely, we number the output neurons from $0$ through $9$, and figure out which neuron has the highest activation value. If that neuron is, say, neuron number $6$, then our network will guess that the input digit was a $6$. And so on for the other output neurons.
 
@@ -678,7 +684,7 @@ So if all four of these hidden neurons are firing then we can conclude that the 
 
 Supposing the neural network functions in this way, we can give a plausible explanation for why it's better to have $10$ outputs from the network, rather than $4$. If we had $4$ outputs, then the first output neuron would be trying to decide what the most significant bit of the digit was. And there's no easy way to relate that most significant bit to simple shapes like those shown above. It's hard to imagine that there's any good historical reason the component shapes of the digit will be closely related to (say) the most significant bit in the output.
 
-Now, with all that said, this is all just a heuristic. Nothing says that the three-layer neural network has to operate in the way I described, with the hidden neurons detecting simple component shapes. Maybe a clever learning algorithm will find some assignment of weights that lets us use only $4$ output neurons. But as a heuristic the way of thinking I've described works pretty well, and can save you a lot of time in designing good neural network architectures.
+Now, with all that said, this is all just a heuristic. Nothing says that the three-layer neural network has to operate in the way I described, with the hidden neurons detecting simple component shapes. Maybe a clever learning algorithm will find some assignment of weights that lets us use only $4$ output neurons. But as a heuristic the way of thinking I've described works pretty well, and can save you a lot of time in designing good neural network  architectures.
 
 
 \subsection{Exercise}
@@ -1494,32 +1500,52 @@ Frequently asked questions here !
 %\bibliography
 %\addcontentsline{toc}{chapter}{Bibliography}
 
-%\begin{thebibliography}{9}
-\bibitem{latexcompanion}
-    Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-    \textit{The \LaTeX\ Companion}.
-    Addison-Wesley, Reading, Massachusetts, 1993.
+\begin{enumerate}%{thebibliography}{9}
 
-\bibitem{einstein}
-Albert Einstein.
-    \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German)
-    [\textit{On the electrodynamics of moving bodies}].
-    Annalen der Physik, 322(10):891–921, 1905.
 
-\bibitem{knuthwebsite}
+\item[Hinton]
+    Geoffery Hinton, University of Toronto \\
+    Coursera MOOC: Neural Networks for Machine Learning, \\
+    \texttt{https://www.coursera.org/learn/neural-networks}
+
+\item[CS201n]
+    CS201n: Convolutional Neural Networks for Visual Recognition. \\
+    %Convolutional Neural Networks (CNNs / ConvNets),\\
+    \texttt{http://cs231n.github.io/convolutional-networks/}
+
+
+\item[Hinton]
+    Geoffery Hinton, University of Toronto \\
+    Coursera MOOC: Neural Networks and Machine Learning,\\
+    \texttt{https://www.coursera.org/learn/neural-networks}
+
+
+\item[Google]
+    %AN EMPIRICAL STUDY OF LEARNING RATES IN DEEP NEURAL NETWORKS FOR SPEECH RECOGNITION\\
+    An empirical study of learning rates in deep neural networks for speeech recognition.\\
+    {\tiny  http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40808.pdf}
+
+\item[Knuth]
     Knuth: Computers and Typesetting,\\
     \texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
 
-%\end{thebibliography}
+\item[\TeX]
+    Michel Goossens, Frank Mittelbach, and Alexander Samarin. \\
+    \textit{The \LaTeX\ Companion}.
+    Addison-Wesley, Reading, Massachusetts, 1993.
+\end{enumerate}
 
 
-\chapter{\color{IAF} \bf Index}
+%\chapter{\color{IAF} \bf Index}
 %\usepackage[utf8]{inputenc}
 %\usepackage{imakeidx}
-\makeindex[columns=3, title=Alphabetical Index]
+%This second section\index{section} may include some special word,
+%and expand the ones already used \index{keywords!used}.
+%\makeindex
+%{\LARGE \bf \color{IAF} Alphabetical Index}
+%[columns=2, title=Alphabetical Index]
 
-This second section\index{section} may include some special word,
-and expand the ones already used \index{keywords!used}.
+
 
 \printindex
 
